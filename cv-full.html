@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cv-full.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E5%A4%A7%E7%95%91%E5%B9%B8%E7%9F%A2-satsuya-ohata">大畑幸矢 (Satsuya Ohata)</h1>
+<ul>
+<li><a href="https://satsuyaohata.jp">CV Summary</a></li>
+<li><a href="https://dblp.uni-trier.de/pid/150/8035.html">DBLP</a></li>
+<li><a href="https://scholar.google.com/citations?user=W_3_aBwAAAAJ&amp;hl=ja">Google Scholar</a></li>
+</ul>
+<h2 id="%E8%81%B7%E6%AD%B4">職歴</h2>
+<!-- - 2021/9 - : フリーランス-->
+<ul>
+<li><strong>2020/4 - 2021/8 : 株式会社デジタルガレージ</strong>
+<ul>
+<li>Senior Researcher @ DG Lab</li>
+</ul>
+</li>
+<li><strong>2017/5 - 2020/3 : 国立研究開発法人産業技術総合研究所</strong>
+<ul>
+<li>特任研究員 @ 情報技術研究部門 / サイバーフィジカルセキュリティ研究センター</li>
+</ul>
+</li>
+<li><strong>2016/4 - 2017/5 : 株式会社東芝</strong>
+<ul>
+<li>研究員 @ 研究開発センター</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E5%AD%A6%E6%AD%B4">学歴</h2>
+<ul>
+<li><strong>2016/3 : 東京大学大学院 情報理工学系研究科電子情報学専攻 博士後期課程修了 博士（情報理工学）</strong>
+<ul>
+<li>博士論文：Provable Security of Applied Public Key Cryptosystems and Heuristically Secure Protocols（高機能公開鍵暗号技術と経験的なセキュリティプロトコルの証明可能安全性）</li>
+<li>指導教員：松浦幹太教授</li>
+</ul>
+</li>
+<li><strong>2013/3 : 東京大学大学院 情報理工学系研究科電子情報学専攻 博士前期課程修了</strong></li>
+<li><strong>2011/3 : 千葉大学 工学部情報画像工学科 卒業</strong></li>
+<li><strong>2006/3 : 埼玉県立浦和高等学校 卒業</strong></li>
+</ul>
+<h2 id="%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E8%AB%96%E6%96%87%E6%9F%BB%E8%AA%AD%E4%BB%98">国際会議論文（査読付）</h2>
+<ol>
+<li><strong>Efficient Privacy-Preserving Variable-Length Substring Match for Genome Sequence</strong>
+<ul>
+<li>Yoshiki Nakagawa, Satsuya Ohata, Kana Shimizu.</li>
+<li>21st International Workshop on Algorithms in Bioinformatics (WABI 2021), LIPICS 201, pp.2:1-2:23, 2021.</li>
+</ul>
+</li>
+<li><strong>Accelerating Secure (2+1)-Party Computation by Insecure but Efficient Building Blocks</strong>
+<ul>
+<li>Keitaro Hiwatashi, Ken Ogura, Satsuya Ohata, Koji Nuida.</li>
+<li>The 16th ACM ASIA Conference on Computer and Communications Security (ACM ASIACCS 2021), pp.616-627, 2020.</li>
+</ul>
+</li>
+<li><strong>An Efficient Secure Division Protocol Using Approximate Multi-Bit Product and New Constant-Round Building Blocks</strong>
+<ul>
+<li>Keitaro Hiwatashi, Satsuya Ohata, Koji Nuida.</li>
+<li>18th International Conference on Applied Cryptography and Network Security (ACNS 2020), LNCS 12146, pp.357-376, 2020.</li>
+</ul>
+</li>
+<li><strong>Communication-Efficient (Client-Aided) Secure Two-Party Protocols and Its Application <a href="https://arxiv.org/abs/1907.03415">[preprint]</a></strong>
+<ul>
+<li>Satsuya Ohata, Koji Nuida.</li>
+<li>Financial Cryptography and Data Security 2020, (FC 2020), LNCS 12059, pp.369-385, 2020.</li>
+</ul>
+</li>
+<li><strong>Accuracy/Efficiency Trade-Off for Privacy-Preserving Division Protocol</strong>
+<ul>
+<li>Satsuya Ohata, Hiraku Morita, Goichiro Hanaoka.</li>
+<li>The International Symposium on Information Theory and Its Applications 2018 (ISITA 2018), pp.535-539, 2018.</li>
+</ul>
+</li>
+<li><strong>Secure Division Protocol and Applications to Privacy-preserving Chi-squared Tests</strong>
+<ul>
+<li>Hiraku Morita, Nuttapong Attrapadung, Satsuya Ohata, Koji Nuida, Shota Yamada, Kana Shimizu, Goichiro Hanaoka, Kiyoshi Asai.</li>
+<li>The International Symposium on Information Theory and Its Applications 2018 (ISITA 2018), pp.530-534, 2018.</li>
+</ul>
+</li>
+<li><strong>Tree-based Secure Comparison of Secret Shared Data</strong>
+<ul>
+<li>Hiraku Morita, Nuttapong Attrapadung, Satsuya Ohata, Shota Yamada, Koji Nuida, Goichiro Hanaoka.</li>
+<li>The International Symposium on Information Theory and Its Applications 2018 (ISITA 2018), pp.525-529, 2018.</li>
+</ul>
+</li>
+<li><strong>Constant-Round Client-Aided Secure Comparison Protocol</strong>
+<ul>
+<li>Hiraku Morita, Nuttapong Attrapadung, Tadanori Teruya, Satsuya Ohata, Koji Nuida, Goichiro Hanaoka.</li>
+<li>European Symposium on Research in Computer Security 2018 (ESORICS 2018), LNCS 11099, pp.395-415, 2018.</li>
+</ul>
+</li>
+<li><strong>Provably Secure Password Reset Protocol: Model, Definition, and Construction <a href="https://eprint.iacr.org/2016/345">[preprint]</a></strong>
+<ul>
+<li>Satsuya Ohata, Takahiro Matsuda, Kanta Matsuura.</li>
+<li>The 17th IEEE International Conference On Trust, Security And Privacy In Computing And Communications (TrustCom 2018), pp.774-782, 2018.</li>
+</ul>
+</li>
+<li><strong>Re-Encryption Verifiability: How to Detect Malicious Activities of a Proxy in Proxy Re-Encryption <a href="https://eprint.iacr.org/2015/112">[preprint]</a></strong>
+<ul>
+<li>Satsuya Ohata, Yutaka Kawai, Takahiro Matsuda, Goichiro Hanaoka, Kanta Matsuura.</li>
+<li>The Cryptographer's Track at the RSA Conference 2015 (CT-RSA 2015), LNCS 9048, pp.410-428, 2015. [preprint]</li>
+</ul>
+</li>
+<li><strong>More Constructions of Re-splittable Threshold Public Key Encryption</strong>
+<ul>
+<li>Satsuya Ohata, Takahiro Matsuda, Goichiro Hanaoka, Kanta Matsuura.</li>
+<li>The 9th International Workshop on Security (IWSEC 2014), LNCS 8639, pp.99-108, 2014.</li>
+</ul>
+</li>
+</ol>
+<h2 id="%E8%8B%B1%E6%96%87%E8%AB%96%E6%96%87%E8%AA%8C%E6%9F%BB%E8%AA%AD%E4%BB%98">英文論文誌（査読付）</h2>
+<ol>
+<li><strong>An Efficient Secure Division Protocol Using Approximate Multi-Bit Product and New Constant-Round Building Blocks</strong>
+<ul>
+<li>Keitaro Hiwatashi, Satsuya Ohata, Koji Nuida.</li>
+<li>IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences (to appear)</li>
+</ul>
+</li>
+<li><strong>Recent Advances in Practical Secure Multi-Party Computation</strong>
+<ul>
+<li>Satsuya Ohata.</li>
+<li>IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences (Invited), Vol.E103-A, No.10, pp.1134-1141, 2020.</li>
+</ul>
+</li>
+<li><strong>Constant-Round Client-Aided Two-Server Secure Comparison Protocol and Its Applications</strong>
+<ul>
+<li>Hiraku Morita, Nuttapong Attrapadung, Tadanori Teruya, Satsuya Ohata, Koji Nuida, Goichiro Hanaoka.</li>
+<li>IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences, Vol.E103-A, No.1, pp.21-32, 2020.</li>
+</ul>
+</li>
+<li><strong>Simple Black-box Adversarial Examples Generation with Very Few Queries</strong>
+<ul>
+<li>Yuya Senzaki, Satsuya Ohata, Kanta Matsuura.</li>
+<li>IEICE Transactions on Information and Systems, Vol.E103-D, No.2, pp.212-221, 2020.</li>
+</ul>
+</li>
+<li><strong>More Constructions of Re-splittable Threshold Public Key Encryption</strong>
+<ul>
+<li>Satsuya Ohata, Takahiro Matsuda, Goichiro Hanaoka, Kanta Matsuura.</li>
+<li>IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences, Vol.E101-A, No.9, pp.1473-1483, 2018.</li>
+</ul>
+</li>
+<li><strong>Generic Construction of Ciphertext-Policy Attribute-Based Signcryption Secure in the Adaptive Predicate Model</strong>
+<ul>
+<li>Masahito Ishizaka, Satsuya Ohata, Kanta Matsuura.</li>
+<li>IPSI Transactions on Advanced Research, Vol.12, No.2, pp.16-26, 2016.</li>
+</ul>
+</li>
+<li><strong>Proxy Re-encryption via Indistinguishability Obfuscation</strong>
+<ul>
+<li>Satsuya Ohata, Kanta Matsuura.</li>
+<li>Security and Communication Networks, Vol.9, Issue 12, pp.1786-1795, 2016.</li>
+</ul>
+</li>
+<li><strong>Methodology for designing cryptographic systems with advanced functionality based on a modular approach, -Towards reducing the barrier to introducing newly-designed cryptographic schemes into real world systems-</strong>
+<ul>
+<li>Goichiro Hanaoka, Satsuya Ohata, Takahiro Matsuda, Koji Nuida, Attrapadung Nattapong.</li>
+<li>Synthesiology, vol.7, No.2, pp.93-104, 2014.</li>
+</ul>
+</li>
+</ol>
+<h2 id="%E3%83%97%E3%83%AC%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88">プレプリント</h2>
+<ol>
+<li><strong>Arbitrary Univariate Function Evaluation and Re-Encryption Protocols over Lifted-ElGamal Type Ciphertexts</strong>
+<ul>
+<li>Koji Nuida, Satsuya Ohata, Shigeo Mitsunari, Nuttapong Attrapadung.</li>
+<li>Cryptology ePrint Archive: Report <a href="https://eprint.iacr.org/2019/1233">2019/1233</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="%E5%8F%97%E8%B3%9E%E7%AD%89">受賞等</h2>
+<ol>
+<li><strong>コンピュータセキュリティシンポジウム2019 (CSS 2019) 奨励賞</strong>（2019/10）</li>
+<li><strong>第4回プライバシーワークショップ(PWS2018)@コンピュータセキュリティシンポジウム2018 (CSS2018) 優秀論文賞</strong>（2018/10）</li>
+<li><strong>5th Heidelberg Laureate Forum 招待</strong>（2017/9）</li>
+<li><strong>KIPS (Kaspersky Industrial Protection Simulation) Winter Series 2016 アジア太平洋地域部門優勝（世界第2位）</strong>（2016/12）</li>
+<li><strong>2015年度 東京大学大学院情報理工学系研究科電子情報学専攻 専攻長賞</strong>（2016/3）</li>
+<li><strong>第1回辻井重男セキュリティ論文優秀賞</strong>（2016/3）</li>
+<li><strong>コンピュータセキュリティシンポジウム2015 (CSS 2015) 学生論文賞</strong>（2015/10）</li>
+<li><strong>2014年暗号と情報セキュリティシンポジウム (SCIS 2014) 論文賞</strong>（2015/1）</li>
+<li><strong>東京大学大学院情報理工学系研究科 研究科長賞</strong>（2013/3）</li>
+</ol>
+<h2 id="%E6%8B%9B%E5%BE%85%E8%AC%9B%E6%BC%94--%E4%BE%9D%E9%A0%BC%E8%AC%9B%E6%BC%94">招待講演 / 依頼講演</h2>
+<ol>
+<li><strong>AIのセキュリティとプライバシに関する近年の研究動向：医療データの安全な利活用に向けて</strong>
+<ul>
+<li>日本メディカルAI学会学術集会 シンポジウム「AIの医療分野応用におけるセキュリティとプライバシ」(2020/2)</li>
+</ul>
+</li>
+<li><strong>機械学習のセキュリティ / 機械学習とセキュリティ</strong>
+<ul>
+<li>SITA 2018 (2018/12)</li>
+<li>CRISMATH 2018 (2018/12)</li>
+<li>EMM研究会（2019/5）</li>
+<li>九州大学IMI Colloquium（2019/7）</li>
+<li>他、民間企業2件</li>
+</ul>
+</li>
+<li><strong>秘密分散技術を用いた深層学習 ～秘匿推論・秘匿訓練～</strong>
+<ul>
+<li>第37回日本銀行情報セキュリティセミナー (2018/6)</li>
+</ul>
+</li>
+<li><strong>セキュリティ×ニューラルネットワークの研究動向</strong>
+<ul>
+<li>SCAIS 2018 (2018/1)</li>
+</ul>
+</li>
+<li><strong>Provably Secure Password Reset Protocol: Model, Definition and Generic Construction</strong>
+<ul>
+<li>JAPAN DATACOM IoT Forum (2015/11)</li>
+</ul>
+</li>
+<li><strong>Re-encryption Verifiability: How to Detect Malicious Activities of a Proxy in Proxy Re-encryption</strong>
+<ul>
+<li>PKC, TCC, CT-RSAを勉強する会2015 (2015/7)</li>
+</ul>
+</li>
+<li><strong>On the Key Re-splittability of Threshold Public Key Encryption</strong>
+<ul>
+<li>IWSEC2014 SCIS/CSS Invited Session (2014/8)</li>
+</ul>
+</li>
+</ol>
+<h2 id="%E5%9B%BD%E5%86%85%E4%BC%9A%E8%AD%B0%E8%AB%96%E6%96%87%E6%9F%BB%E8%AA%AD%E7%84%A1">国内会議論文（査読無）</h2>
+<ol>
+<li><strong>CCS 2020 会議報告</strong>
+<ul>
+<li>大畑幸矢.</li>
+<li>情報処理 Vol.62 No.5</li>
+</ul>
+</li>
+<li><strong>Approximate Privacy Preserving Top-k Algorithm with Reduced Communication Rounds</strong>
+<ul>
+<li>Ke Huang, Satsuya Ohata, Kanta Matsuura.</li>
+<li>SCIS 2020</li>
+</ul>
+</li>
+<li><strong>Query Ahead: 平易な記述が可能な秘匿DB クエリーシステムの設計と実装</strong>
+<ul>
+<li>石田祐介, 國井淳, 桶谷純一, 大畑幸矢, 松田隆宏, アッタラパドゥンナッタポン,  花岡悟一郎.</li>
+<li>SCIS 2020</li>
+</ul>
+</li>
+<li><strong>非対称3パーティ秘密計算：任意の論理回路が計算可能な秘密分散ベースの定数ラウンドプロトコル</strong>
+<ul>
+<li>樋渡啓太郎, 小倉拳, 大畑幸矢, 縫田光司.</li>
+<li>SCIS 2020 （論文賞受賞（受賞者は第一著者））</li>
+</ul>
+</li>
+<li><strong>エルガマル型暗号文に対する任意関数演算・再暗号化の二者間秘密計算プロトコルとその応用</strong>
+<ul>
+<li>縫田光司, 大畑幸矢, 光成滋生, Nuttapong Attrapadung.</li>
+<li>SCIS 2020</li>
+</ul>
+</li>
+<li><strong>Privacy-Preserving Approximate Nearest Neighbor Search: A Construction and Experimental Results</strong>
+<ul>
+<li>Ke Huang, Satsuya Ohata, Kanta Matsuura.</li>
+<li>PWS 2019</li>
+</ul>
+</li>
+<li><strong>秘密分散に基づく秘匿全文検索</strong>
+<ul>
+<li>中川佳貴, 大畑幸矢, 清水佳奈.</li>
+<li>PWS 2019  （CSS2019奨励賞受賞）</li>
+</ul>
+</li>
+<li><strong>近似多ビット乗算と新しい定数ラウンド基本ツールを用いた省ラウンド秘匿除算プロトコル</strong>
+<ul>
+<li>樋渡啓太郎, 大畑幸矢, 縫田光司.</li>
+<li>CSS 2019</li>
+</ul>
+</li>
+<li><strong>スケーラブルな二者間秘匿計算のサーバー構成と効率的な通信方法の実装</strong>
+<ul>
+<li>石田祐介, 桶谷純一, 國井淳, 大畑幸矢, 花岡悟一郎.</li>
+<li>PWS 2019</li>
+</ul>
+</li>
+<li><strong>[招待講演] 機械学習とセキュリティ</strong>
+<ul>
+<li>大畑幸矢, 先崎佑弥.</li>
+<li>2019年度第1回EMM研究会.</li>
+</ul>
+</li>
+<li><strong>効率的な秘匿大小比較プロトコルとその応用</strong>
+<ul>
+<li>大畑幸矢, 縫田光司.</li>
+<li>SCIS 2019</li>
+</ul>
+</li>
+<li><strong>ラウンド効率のよい2者間秘匿計算とその秘匿畳み込みニューラルネットワークへの応用</strong>
+<ul>
+<li>大畑幸矢.</li>
+<li>PWS 2018 (PWS優秀論文賞受賞）</li>
+</ul>
+</li>
+<li><strong>秘匿深層学習再考</strong>
+<ul>
+<li>大畑幸矢.</li>
+<li>SCIS 2018</li>
+</ul>
+</li>
+<li><strong>深層学習に対する効率的なAdversarial Examples生成によるブラックボックス攻撃とその対策</strong>
+<ul>
+<li>先崎佑弥, 大畑幸矢, 松浦幹太.</li>
+<li>SCIS 2018 （論文賞受賞（受賞者は第一著者））</li>
+</ul>
+</li>
+<li><strong>クライアント補助型秘匿計算および基本ツール</strong>
+<ul>
+<li>森田啓, 大畑幸矢, Nuttapong Attrapadung, 縫田光司, 山田翔太, 清水佳奈, 花岡悟一郎, 浅井潔.</li>
+<li>SCIS 2018</li>
+</ul>
+</li>
+<li><strong>深層学習におけるAdversarial Trainingによる副作用とその緩和策</strong>
+<ul>
+<li>先崎 佑弥, 大畑 幸矢, 松浦 幹太.</li>
+<li>CSS 2017</li>
+</ul>
+</li>
+<li><strong>暗号学的機械学習</strong>
+<ul>
+<li>大畑幸矢.</li>
+<li>SCIS 2017</li>
+</ul>
+</li>
+<li><strong>パスワード再発行プロトコルの安全性について</strong>
+<ul>
+<li>大畑幸矢, 松田隆宏, 松浦幹太.</li>
+<li>SCIS 2016</li>
+</ul>
+</li>
+<li><strong>適応的述語安全な暗号文ポリシー型属性ベースSigncryptionの一般的構成</strong>
+<ul>
+<li>石坂理人, 大畑幸矢, 松浦幹太.</li>
+<li>SCIS 2016</li>
+</ul>
+</li>
+<li><strong>証明可能安全なパスワード再発行プロトコル・改</strong>
+<ul>
+<li>大畑幸矢, 松田隆宏, 松浦幹太.</li>
+<li>CSS 2015 （CSS2015学生論文賞受賞）</li>
+</ul>
+</li>
+<li><strong>識別不可性難読化に基づく復号の速い代理暗号化について</strong>
+<ul>
+<li>大畑幸矢, 松浦幹太.</li>
+<li>SCIS 2015</li>
+</ul>
+</li>
+<li><strong>証明可能安全なパスワード再発行プロトコルについて</strong>
+<ul>
+<li>大畑幸矢, 松田隆宏, 松浦幹太.</li>
+<li>CSS 2014</li>
+</ul>
+</li>
+<li><strong>閾値公開鍵暗号の鍵再分割可能性について</strong>
+<ul>
+<li>大畑幸矢, 松田隆宏, 花岡悟一郎, 松浦幹太.</li>
+<li>SCIS 2014 （論文賞受賞）</li>
+</ul>
+</li>
+<li><strong>検証可能代理人再暗号化方式の安全性について</strong>
+<ul>
+<li>大畑幸矢, 松田隆宏, 花岡悟一郎, 松浦幹太.</li>
+<li>SCIS 2013</li>
+</ul>
+</li>
+</ol>
+<h2 id="%E5%AD%A6%E4%BC%9A%E6%B4%BB%E5%8B%95">学会活動</h2>
+<ul>
+<li><strong>論文誌編集委員・国際会議プログラム委員</strong>
+<ul>
+<li>IEICE Trans. Fundamentals (Special Section on Cryptography and Information Security) 2022/2021</li>
+<li>ICME 2020</li>
+<li>AsiaJCIS 2019/2018</li>
+</ul>
+</li>
+<li><strong>実行委員・運営委員</strong>
+<ul>
+<li>2021年度九州大学IMI共同利用 (秘密計算・秘密分散の数理と実用の探求)</li>
+<li>IWSEC 2019</li>
+<li>CSS 2017</li>
+<li>SCIS 2013</li>
+<li>PKC2013</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
